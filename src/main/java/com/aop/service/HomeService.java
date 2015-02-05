@@ -13,7 +13,7 @@ import java.util.Random;
  */
 @Service
 public class HomeService {
-    private List<DataViewBean> SERVER_DATA_LIST = new ArrayList<>();
+    private List<DataViewBean> SERVER_DATA_LIST = new ArrayList<DataViewBean>();
 
     public List<DataViewBean> getDataViewBeans() {
         return SERVER_DATA_LIST;
