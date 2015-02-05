@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, Verdana, Tahoma, Helvetica;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    width: 100%;
+    min-width: 1250px;
+}
+
+a {
+    color: #4271c6;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+div.login_main_container {
+    height: 286px;
+    margin-top: 100px;
+    width: 610px;
+}
+
+div.login_main_container span,
+.credentials .text_container {
+    color: #666666;
+    font-family: Arial, Verdana;
+    font-size: 13px;
+}
+
+div.login_main_container .login_header {
+    background: url('../img/login/header.png') bottom no-repeat;
+    height: 18px;
+    width: 100%;
+}
+
+div.login_main_container .login_footer {
+    height: 18px;
+    background: url('../img/login/footer.png') top no-repeat;
+    width: 100%;
+}
+
+div.login_main_container .login_body {
+    background: url('../img/login/body.png') repeat-y 100% top;
+    display: inline-block;
+    height: 185px;
+    width: 100%;
+}
+
+div.login_main_container .login_body .logo {
+    background: url('../img/cronos_logo.png') no-repeat center 20%;
+    display: inline-block;
+    float: left;
+    height: 100%;
+    width: 48%;
+}
+
+div.login_main_container .login_body .logo span {
+    display: block;
+    font-style: italic;
+    margin-left: 30px;
+    margin-top: 84px;
+}
+
+div.login_main_container .login_body .credentials {
+    display: inline-block;
+    float: left;
+    height: 100%;
+    padding: 0px 10px;
+    width: 47%;
+}
+
+.credentials .text_container {
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+}
+
+div.login_main_container .login_body .credentials .username_and_password_container {
+    display: inline-block;
+    margin-top: 8px;
+    width: 100%;
+}
+
+div.login_main_container .login_body .credentials .login_button {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 80px;
+    text-align: left;
+    width: 100%;
+}
+
+.username_and_password_container div {
+    text-align: left;
+    width: 100%;
+}
+
+.username_and_password_container span {
+    display: block;
+    float: left;
+    padding-top: 3px;
+    width: 27%;
+}
+
+.username_and_password_container input {
+    width: 150px;
+}
+
+.error_container {
+    margin-top: 8px;
+    text-align: left;
+    color: #8b0000;
+    font-weight: bold;
+}
+
+.login_button a {
+    display: inline-block;
+    width: 83px;
+    height: 25px;
+    background-image: url("../img/buttons_sprite.png");
+    background-position: -4969px 0px;
+}
+
+.login_button a:hover {
+    background-position: -4969px -26px;
+}

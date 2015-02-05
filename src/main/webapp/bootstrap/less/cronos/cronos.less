@@ -1,0 +1,173 @@
+//@import "../glyphicons.less";
+
+@cronos-modal-width: 350px;
+@cronos-modal-border-radius: 5px;
+@cronos-modal-footer-padding: 9px 20px 10px;
+@cronos-modal-header-font-size: ceil((@font-size-base * 1.1));
+@font-size-base: 12px;
+@font-size-small: 10px;
+@font-family-sans-serif: Arial,sans-serif;
+@font-family-serif: Arial,sans-serif;
+@font-family-monospace: Arial,sans-serif;
+@medium-gray: #666666;
+@bg-cronos-disabled: #efefef;
+
+.cronos-modal {
+  .modal-header {
+    .modal-header;
+    padding: 12px 15px;
+    -webkit-border-top-left-radius: @cronos-modal-border-radius;
+    -webkit-border-top-right-radius: @cronos-modal-border-radius;
+    -moz-border-radius-topleft: @cronos-modal-border-radius;
+    -moz-border-radius-topright: @cronos-modal-border-radius;
+    border-top-left-radius: @cronos-modal-border-radius;
+    border-top-right-radius: @cronos-modal-border-radius;
+  }
+
+  .cronos-modal-close {
+    font-weight: bold;
+    text-decoration: none;
+    font-size: @cronos-modal-header-font-size;
+  }
+
+  .cronos-modal-title {
+    font-weight: bold;
+    font-size: @cronos-modal-header-font-size;
+  }
+
+  .modal-footer {
+    .modal-footer;
+    padding: @cronos-modal-footer-padding;
+  }
+}
+
+.cronos-error-modal,
+.cronos-warning-modal,
+.cronos-info-modal {
+  .modal-dialog {
+    width: @cronos-modal-width;
+  }
+}
+
+.cronos-error-modal {
+  .cronos-modal-title {
+    .cronos-modal .cronos-modal-title;
+    color: @state-danger-text;
+  }
+
+  .cronos-modal-close {
+    .cronos-modal .cronos-modal-close;
+    color: @state-danger-text;
+  }
+
+  .modal-header {
+    .cronos-modal .modal-header;
+    background-color: @state-danger-bg;
+    border-bottom-color: @state-danger-border;
+  }
+
+  .modal-footer {
+    .cronos-modal .modal-footer;
+    border-top-color: @state-danger-border;
+  }
+}
+
+.cronos-info-modal {
+  .cronos-modal-title {
+    .cronos-modal .cronos-modal-title;
+    color: @state-info-text;
+  }
+
+  .cronos-modal-close {
+    .cronos-modal .cronos-modal-close;
+    color: @state-info-text;
+  }
+
+  .modal-header {
+    .cronos-modal .modal-header;
+    background-color: @state-info-bg;
+    border-bottom-color: @state-info-border;
+  }
+
+  .modal-footer {
+    .cronos-modal .modal-footer;
+    border-top-color: @state-info-border;
+  }
+}
+
+.cronos-warning-modal {
+  .cronos-modal-title {
+    .cronos-modal .cronos-modal-title;
+    color: @state-warning-text;
+  }
+
+  .cronos-modal-close {
+    .cronos-modal .cronos-modal-close;
+    color: @state-warning-text;
+  }
+
+  .modal-header {
+    .cronos-modal .modal-header;
+    background-color: @state-warning-bg;
+    border-bottom-color: @state-warning-border;
+  }
+
+  .modal-footer {
+    .cronos-modal .modal-footer;
+    border-top-color: @state-warning-border;
+  }
+}
+
+.cronos-default-modal {
+  .cronos-modal-title {
+    .cronos-modal .cronos-modal-title;
+    color: @panel-default-text;
+  }
+
+  .cronos-modal-close {
+    .cronos-modal .cronos-modal-close;
+    color: @panel-default-text;
+  }
+
+  .modal-header {
+    .cronos-modal .modal-header;
+    background-color: @panel-default-heading-bg;
+    border-bottom-color: @panel-default-border;
+  }
+
+  .modal-footer {
+    .cronos-modal .modal-footer;
+    border-top-color: @panel-default-border;
+  }
+}
+
+// TODO: aw1492: think where it should be placed. maybe cm.less
+.cronos-label {
+  font-weight: bold;
+  color: @medium-gray;
+  span {
+    font-weight: normal;
+  }
+}
+
+.panel-default {
+  .cronos-panel-title {
+    font-weight: bold;
+    font-variant: small-caps;
+    color: @medium-gray;
+    font-size: @font-size-large;
+  }
+}
+
+.bg-cronos-disabled {
+  .bg-variant(@bg-cronos-disabled);
+}
+
+.cronos-readonly-info-panel {
+  .bg-cronos-disabled;
+  .panel-body > .row {
+    + .row {
+      margin-top: 10px;
+    }
+  }
+}
