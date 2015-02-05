@@ -30,11 +30,13 @@ public class HomeService {
 
     public Boolean updateServerData(String phoneNumber, String code, Integer count) {
         if (SERVER_DATA_LIST.contains(new DataViewBean(code))) {
-            SERVER_DATA_LIST.stream().filter(bean -> bean.getProductCode().equals(code)).forEach(bean -> {
-                bean.setPhoneNumber(phoneNumber);
-                bean.setRealizedCount(count);
-                bean.setRest(bean.getRest() - count);
-            });
+            for (DataViewBean bean : SERVER_DATA_LIST) {
+                if (bean.getProductCode().equals(code)) {
+                    bean.setPhoneNumber(phoneNumber);
+                    bean.setRealizedCount(count);
+                    bean.setRest(bean.getRest() - count);
+                }
+            }
             return true;
         } else {
             SERVER_DATA_LIST.add(new DataViewBean(phoneNumber, code, count));
