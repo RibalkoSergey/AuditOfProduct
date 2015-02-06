@@ -1,0 +1,117 @@
+<style type="text/css">
+    .switch span {
+        line-height: 10px;
+    }
+
+    .glyphicon-remove {
+        opacity: 0.4;
+    }
+
+    .glyphicon-remove:hover {
+        opacity: 0.9;
+        cursor: pointer;
+    }
+
+    .help-block {
+        margin-bottom: 0px;
+    }                                                                                                                    
+</style>
+
+<!--TODO: aw1492: NikolayK: remove 'style' attribute from html-->
+<div class="modal-header">
+    <div class="row">
+        <div ng-if="issueDialogType.name == 'create'" class="col-md-10 cronos-modal-title">Create Issue</div>
+        <div ng-if="issueDialogType.name == 'edit'" class="col-md-10 cronos-modal-title">Edit Issue</div>
+        <div class="col-md-2 text-right"><span class="glyphicon glyphicon-remove" style="cursor:pointer;"
+                                               ng-click="dismiss()"></span>
+        </div>
+    </div>
+</div>
+
+<form name="issueModalForm" role="form" novalidate>
+    <div class="modal-body">
+        <div class="row form-group">
+            <div class="col-md-3 cronos-label required">
+                Quality Item
+            </div>
+            <div class="col-md-9" ng-class="{'has-error' : issueModalForm.qualityItem.$invalid && submitted}">
+                <select name="qualityItem" class="form-control" ng-model="issue.qualityItem" required
+                        ng-options="qualityItem.name for qualityItem in qualityItems track by qualityItem.id">
+                    <option value="" class="text-muted">Not Selected</option>
+                    <option value="1" selected="selected">Test</option>
+                </select>
+                <span ng-show="issueModalForm.qualityItem.$error.required && submitted" class="help-block">Can't be not selected</span>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-3 cronos-label required">
+                Responsible party
+            </div>
+            <div class="col-md-9" ng-class="{'has-error' : issueModalForm.responsibleParty.$invalid && submitted}">
+                <select name="responsibleParty" class="form-control" ng-model="issue.responsibleParty" required 
+                        ng-options="responsibleParty.name for responsibleParty in responsibleParties track by responsibleParty.id">
+                    <option value="" class="text-muted">Not Selected</option>
+                </select>
+                <span ng-show="issueModalForm.responsibleParty.$error.required && submitted" class="help-block">Can't be not selected</span>
+            </div>
+        </div>
+        <div ng-if="issueDialogType.name == 'create'"  class="row form-group">
+            <div class="col-md-3 cronos-label">
+                Issue Type
+            </div>
+            <div class="col-md-9">
+                <select name="issueType" class="form-control" ng-model="issue.issueType"
+                        ng-options="issueType.name for issueType in issueTypes track by issueType.id">
+                </select>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-3 cronos-label required">Description</div>
+            <div class="col-md-9" ng-class="{'has-error' : issueModalForm.description.$invalid && submitted}">
+                <textarea type="text" name="description" class="form-control" ng-model="description.value" ng-maxlength=1999 required
+                          style="resize: none;"></textarea>
+                <span ng-show="issueModalForm.description.$error.required && submitted" class="help-block">Description can't be blank.</span>
+                <span ng-show="issueModalForm.description.$error.maxlength && submitted" class="help-block">Description is too long.</span>
+            </div>
+
+
+        </div>
+        <div class="row form-group">
+            <div class="col-md-3 cronos-label">
+                Send mail
+            </div>
+            <div class="col-md-9">
+                <toggle-switch model="sendMail.value" on-label="Yes" off-label="No"></toggle-switch>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-3 cronos-label">
+                Attach files
+            </div>
+            <div class="col-md-9">
+                <div style="display: inline-block;"><input style="width: 76px;" type="file" data-url="/cm/file/attach" multiple upload container="files" params="fileUploadAdditionalParams"></div>
+                <div style="display: inline-block;" ng-show="!files.length">No files selected</div>
+                
+                <p style="overflow-y: auto; max-height: 100px">
+                    <div style="margin-top: 2px;" ng-repeat="file in files">
+                        <span ng-click="detach(file)" style="display: inline-block; padding-right: 5px;"
+                              class="glyphicon glyphicon-remove" title="Exclude File"></span>
+                        <span>{{file.name}}</span>
+                        <span ng-if="!file.isSuccessfully" class="text-danger" style="margin-left: 5px">Failed file upload.</span>
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div cronos-error-message closable="true" class="alert alert-danger cronos-error"></div>
+    <div class="modal-footer">
+        <button type="submit" title="Create Issue" ng-if="issueDialogType.name == 'create'" class="btn btn-primary"
+                ng-click="create(issueModalForm.$valid)">Create Issue
+        </button>
+        <button type="submit" title="Apply Changes" ng-if="issueDialogType.name == 'edit'" class="btn btn-primary" ng-click="save(issueModalForm.$valid)">Save
+            Changes
+        </button>
+        <button class="btn btn-default" title="Cancel" ng-click="cancel()">Cancel</button>
+    </div>
+</form>
