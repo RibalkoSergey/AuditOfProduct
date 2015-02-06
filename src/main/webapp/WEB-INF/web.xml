@@ -37,7 +37,7 @@
         <filter-class>com.aop.config.filter.StaticContentFilter</filter-class>
         <init-param>
             <param-name>resources</param-name>
-            <param-value>/*/css/**,/*/bootstrap/**,/*/view/**,/*/js/**,/*/img/**,/*/favicon.ico,/*/wsdl/**</param-value>
+            <param-value>/*/css/**,/*/bootstrap/**,/*/jsp/**,/*/js/**,/*/img/**,/*/favicon.ico,/*/wsdl/**</param-value>
         </init-param>
     </filter>
 

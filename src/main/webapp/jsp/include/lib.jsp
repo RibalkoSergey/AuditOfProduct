@@ -22,7 +22,6 @@
 <script type="text/javascript" src="<c:url value='/js/libs/jquery/jquery.qtip.js'/>"></script>
 <script type="text/javascript" src="<c:url value='/js/libs/ckeditor/ckeditor.js' />"></script>
 <script type="text/javascript" src="<c:url value="/js/libs/angular/ng-quick-date/ng-quick-date.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/js/libs/angular/angular-block-ui/angular-block-ui.js"/>"></script>
 
 <link rel="stylesheet" href="<c:url value="/bootstrap/css/bootstrap.css"/> " media="all">
 <link rel="stylesheet" href="<c:url value="/bootstrap/css/bootstrap-theme.css"/> " media="all">
@@ -34,3 +33,4 @@
 <link rel="stylesheet" href="<c:url value="/css/scrollable-table.css"/> " media="all">
 
 <link rel="stylesheet" href="<c:url value='/js/libs/angular/ng-quick-date/ng-quick-date-plus-default-theme.css'/>" media="all">
+

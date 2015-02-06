@@ -47,7 +47,7 @@
     }
 </style>
 
-<div style="display: inline-block">
+<div style="display: inline-block; margin-bottom: -30px;">
     <div style="display: inline-block" class="logo"></div>
     <div id="blink6" style="text-align: center; font-weight: bold; margin-left: 10px; top: -65px; font-size: 95px; color: #66A1DE; font-style: italic;">Audit of Products</div>
 </div>

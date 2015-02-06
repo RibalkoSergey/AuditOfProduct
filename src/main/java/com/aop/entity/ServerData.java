@@ -1,16 +1,12 @@
 package com.aop.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Transient;
 
 /**
  * Created by alexanderli on 2/5/15.
  */
-@Entity
 public class ServerData {
     @Transient
-    @Id
     private String productCode;
 
     @Transient
